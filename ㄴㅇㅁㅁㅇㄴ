@@ -1,0 +1,28 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<vector>
+
+using namespace std;
+
+int main()
+{		
+	string s;
+	getline(cin, s);
+	for (int i = 0; i < s.length(); i++) {
+		if ('a' <= s[i] && s[i] <= 'z')
+		{
+			if (s[i] > 'z' - 13)
+				s[i] -= 13;
+			else
+				s[i] +=13;
+		}
+		else if ('A'<=s[i] && s[i] <= 'Z')
+		{
+			s[i] += 13;
+			if (s[i] > 'Z')
+				s[i] -= 26;
+		}
+	}
+	cout << s;
+}
